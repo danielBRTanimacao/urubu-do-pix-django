@@ -2,14 +2,14 @@
 <header class="bg-primary">
     <h1 class="center-txt h1-header">
         Urubu do pix
-        <a href="#">
+        <a href="{% url "index" %}">
             <img width="60" src="{% static "svgs/logo-pix.svg" %}" alt="icone_do_pix">
         </a>
     </h1>
     <nav class="header-nav">
         <ul class="nav">
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{% url "trading" %}" class="nav-link">
                     Trading
                 </a>
             </li>

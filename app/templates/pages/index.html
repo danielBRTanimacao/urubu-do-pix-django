@@ -7,35 +7,35 @@
             <h2 class="title-trading">Tabela de Trading</h2>
             <ul class="nav-trading">
                 <li>
-                    <form action="#" method="post">
+                    <form action="{% url "trading" %}" method="post">
                         {% csrf_token %}
                         <input type="hidden" name="depositedValue" value="200">
                         <input class="trading-input" type="submit" value="$200 Retorno 2000">
                     </form>
                 </li>   
                 <li>
-                    <form action="#" method="post">
+                    <form action="{% url "trading" %}" method="post">
                         {% csrf_token %}
                         <input type="hidden" name="depositedValue" value="250">
                         <input class="trading-input" type="submit" value="$250 Retorno 2500">
                     </form>
                 </li>
                 <li>
-                    <form action="#" method="post">
+                    <form action="{% url "trading" %}" method="post">
                         {% csrf_token %}
                         <input type="hidden" name="depositedValue" value="300">
                         <input class="trading-input" type="submit" value="$300 Retorno 3000">
                     </form>
                 </li>
                 <li>
-                    <form action="#" method="post">
+                    <form action="{% url "trading" %}" method="post">
                         {% csrf_token %}
                         <input type="hidden" name="depositedValue" value="350">
                         <input class="trading-input" type="submit" value="$350 Retorno 3500">
                     </form>
                 </li>
                 <li>
-                    <form action="#" method="post">
+                    <form action="{% url "trading" %}" method="post">
                         {% csrf_token %}
                         <input type="hidden" name="depositedValue" value="400">
                         <input class="trading-input" type="submit" value="$400 Retorno 4000">
