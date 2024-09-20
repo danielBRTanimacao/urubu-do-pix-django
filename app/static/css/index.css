@@ -72,6 +72,10 @@ h1 {
     cursor: pointer;
 }
 
+.btn:hover {
+    background-color: var(--smooth-darker-green);
+}
+
 /* header principal */
 .header-nav {
     display: flex;

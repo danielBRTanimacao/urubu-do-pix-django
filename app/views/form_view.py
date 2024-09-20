@@ -1,20 +1,21 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+
 
 def create(request):
-    if request.user.is_authenticated:
-        context = {}
+    context = {
+        'site_title': 'Registrar - Urubu do pix'
+    }
 
-        return render(request, 'pages/trading.html', context)
+    return render(request, 'pages/index.html', context)
     
-    return redirect('create')
-
 def login_view(request):
-    if request.user.is_authenticated:
-        context = {}
+    context = {
+        'site_title': 'Login - Urubu do pix'
+    }
 
-        return render(request, 'pages/trading.html', context)
-    
-    return redirect('create')
+    return render(request, 'pages/index.html', context)
 
+@login_required(login_url='login')
 def logout(request):    
     return render(request, 'pages/index.html')

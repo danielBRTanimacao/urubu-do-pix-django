@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 def index(request):
     context = {
@@ -7,10 +8,10 @@ def index(request):
 
     return render(request, 'pages/index.html', context)
 
+@login_required(login_url='login')
 def account(request):
-    if request.user.is_authenticated:
-        context = {}
-
-        return render(request, 'pages/account.html', context)
-
-    return redirect('create')
+    context = {
+        'title_site': f'Urubu do pix - {request.user.username}'
+    }
+    
+    return render(request, 'pages/account.html', context)

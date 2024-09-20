@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url='login')
 def trading(request):
-    if request.user.is_authenticated:
-        context = {}
+    context = {
+        "title_site": 'Urubu do pix - trade'
+    }
 
-        return render(request, 'pages/trading.html', context)
-    
-    return redirect('create')
+    return render(request, 'pages/trading.html', context)
