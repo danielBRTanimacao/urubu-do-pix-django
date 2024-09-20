@@ -1,10 +1,10 @@
 # Urubu do pix Django🦅
 
-<img src="./img-readme/img-project" alt="image-project">
+<img src="./img-readme/img-project.png" alt="image-project">
 
 ### Sobre o projeto ✨
 
-> lorem impsum
+> Projeto Django ensinando de maneira totalmente mediocre como você criar um urubu do pix
 
 ## Requisitos 💻
 
