@@ -6,9 +6,13 @@
     --variant-black: #251926;
     --variant-white: rgb(243, 243, 243);
     --color-pix: #54b6a3;
-    --smooth-darker-green: #106143;
     --variant-green: #04aa6d;
+    --smooth-darker-green: #106143;
     --variant-darker-green: #0f3124;
+
+    --light-red: #f8d7da;
+    --variant-red: #f1aeb5;
+    --variant-darker-red: #58151c;
 
     --big-font: 3rem;
     --medium-font: 1.45rem;
@@ -237,48 +241,6 @@ input.trading-input:hover {
     }
 }
 
-/* Game */
-
-.break-game {
-    gap: 10px;
-    flex-direction: column;
-}
-
-.game {
-    border-radius: 5px;
-    padding: 5px;
-    display: flex;
-    gap: 5px;
-    background-color: grey;
-    width: 620px;
-    height: 345px;
-}
-
-.box-game {
-    background-color: rgb(225, 225, 225);
-    width: 220px;
-    height: 335px;
-    font-size: var(--big-font);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.box-game p {
-    color: var(--variant-green);
-    font-family: "Kode Mono", monospace;
-    padding: 90px 60px;
-    background-color: rgb(183, 183, 183);
-    border-radius: 5px;
-}
-
-.winner {
-    font-family: "EB Garamond", serif;
-    color: var(--variant-darker-green);
-    font-weight: 700;
-    font-size: 2.5rem;
-}
-
 /*Error sets*/
 .errorlist {
     list-style: none;
@@ -323,4 +285,31 @@ input.trading-input:hover {
 .close:focus {
     color: #c7c7c7;
     cursor: pointer;
+}
+
+/*Alerts*/
+.alert {
+    border: 2px solid rgb(73, 73, 73);
+    border-radius: 5px;
+    padding: 5px;
+    background-color: gray;
+    color: var(--variant-white);
+    font-size: large;
+    font-weight: 600;
+}
+
+.alert.green-alert {
+    border: 2px solid var(--smooth-darker-green);
+    border-radius: 5px;
+    padding: 5px;
+    background-color: var(--variant-green);
+    color: var(--variant-darker-green);
+}
+
+.alert.red-alert {
+    border: 2px solid var(--variant-red);
+    border-radius: 5px;
+    padding: 5px;
+    background-color: var(--light-red);
+    color: var(--variant-darker-red);
 }
