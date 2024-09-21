@@ -43,6 +43,6 @@ def login_view(request):
     return render(request, 'pages/login.html', context)
 
 @login_required(login_url='login')
-def logout(request):    
+def logout_view(request):    
     logout(request)
     return redirect('login')
