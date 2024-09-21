@@ -1,4 +1,37 @@
 {% extends "base.html" %}
 {% block content %}
-    login
+    <div>
+        <h2 class="h1-header title-trading">Login</h2>
+    </div>
+    <main class="center-main">
+        <form action="{% url "login" %}" method="post" class="form-deposit" style="padding: 15px; border-radius: 5px;">
+            {% csrf_token %}
+            {% for field in form %}    
+                <div class="py-2">
+                    {{field.as_field_group}}
+                </div>
+            {% endfor %}
+            <div style="display: flex;">
+                <input type="checkbox" id="passwordShow">
+                <label for="passwordShow">Mostrar senha</label>
+            </div>
+            <p style="padding: 0; margin: 0;">
+                Não tem uma conta? <a href="{% url "create" %}">Registrar-se</a>
+            </p>
+            <div>
+                <input type="submit" value="Entrar">
+            </div>
+        </form>
+    </main>
+    <script>
+        const checker = document.querySelector("input#passwordShow")
+        checker.addEventListener('click', event=> {
+            const showPass = document.querySelector("input#passwordInput")
+            if (showPass.type === 'password') {
+                showPass.type = 'text'
+            } else {
+                showPass.type = 'password'
+            }
+        })
+    </script>
 {% endblock content %}

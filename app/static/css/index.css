@@ -142,6 +142,10 @@ input.trading-input:hover {
     resize: vertical;
 }
 
+.form-deposit input[type="checkbox"] {
+    width: auto;
+}
+
 .form-deposit input[type="button"],
 .form-deposit input[type="submit"],
 .form-deposit input[type="reset"] {
@@ -273,4 +277,12 @@ input.trading-input:hover {
     color: var(--variant-darker-green);
     font-weight: 700;
     font-size: 2.5rem;
+}
+
+/*Error sets*/
+.errorlist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: red;
 }
