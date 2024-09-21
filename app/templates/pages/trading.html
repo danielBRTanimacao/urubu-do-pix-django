@@ -4,12 +4,17 @@
     {% include "partials/_header.html" %}
     <main class="center-main">
         <form action="#" method="post" class="form-deposit">
+            {% csrf_token %}
             <label for="depositedValue">Valor para depositar...</label>
             <input type="number" name="depositedValue" id="depositedValueId" placeholder="R$..." required autofocus step="0.01">
-            {% if message %}
-                mensagem
-            {% endif %}
             <input type="submit" value="Depositar">
+            {% if message %}
+                <div class="alert red-alert">
+                    <p class="lead">
+                        Hello
+                    </p>    
+                </div>
+            {% endif %}
         </form>
     </main>
 {% endblock content %}
