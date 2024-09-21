@@ -5,51 +5,30 @@
     <main class="center-main">
         <div>
             <nav style="display: flex; align-items: center; gap: 15px">
-                <h1>Dinheiro do user</h1>
+                <h1>Dinheiro atual</h1>
                 <a class="btn" href="#" id="exitModal">sair da conta</a>
             </nav>
             <p class="border-left">R${{user.amount}}</p>
             <h1>
-                Renda total
-                <a class="btn" href="#">sacar</a>
+                Renda passiva total
+                <a class="btn" href="#" id="withdraw">sacar</a>
             </h1>
-            <p class="border-left">R${{user.amount}}</p>
-            <div class="alert red-alert">
-                <p>
-                    Erro não e possivel sacar o valor!
-                </p>    
-            </div>
+            <p class="border-left">
+                Por dia aumenta 3.33% valor maximo para retirar <strong>R$<span id="valueSize">{{user.amount}}</span></strong>
+            </p>
+            <div id="drawnError"></div>
         </div>
     </main>
     <div id="myModal" class="modal">
         <div class="modal-content">
             <div class="header-nav title-trading">
-                <h2>
-                    Deseja realmente sair da conta?
-                </h2>
+                <h2>Deseja realmente sair da conta?</h2>
                 <span class="close">&times;</span>
             </div>
-            <div style="padding: 20px 0; display: flex; justify-content: center;">
+            <div style="padding: 20px 0; display: flex; justify-content: center">
                 <a href="{% url "logout" %}" class="btn">SIM</a>
             </div>
         </div>
     </div>
-    <script>
-        const modal = document.getElementById("myModal");
-        const openModalBtn = document.getElementById("exitModal");
-        const closeModal = document.getElementsByClassName("close")[0];
-
-        openModalBtn.onclick = function() {
-        modal.style.display = "block";
-        };
-        closeModal.onclick = function() {
-        modal.style.display = "none";
-        };
-
-        window.onclick = function(event) {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-        };
-    </script>
+    <script src="{% static "js/account.js" %}"></script>
 {% endblock content %}

@@ -288,28 +288,25 @@ input.trading-input:hover {
 }
 
 /*Alerts*/
-.alert {
-    border: 2px solid rgb(73, 73, 73);
-    border-radius: 5px;
-    padding: 5px;
-    background-color: gray;
-    color: var(--variant-white);
+.messages {
+    padding: 0;
+    margin: 0;
+    list-style: none;
     font-size: large;
     font-weight: 600;
 }
-
-.alert.green-alert {
+.success {
     border: 2px solid var(--smooth-darker-green);
     border-radius: 5px;
-    padding: 5px;
+    padding: 10px;
     background-color: var(--variant-green);
     color: var(--variant-darker-green);
 }
 
-.alert.red-alert {
+.error {
     border: 2px solid var(--variant-red);
     border-radius: 5px;
-    padding: 5px;
+    padding: 10px;
     background-color: var(--light-red);
     color: var(--variant-darker-red);
 }

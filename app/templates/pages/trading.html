@@ -9,13 +9,11 @@
             <input type="number" name="depositedValue" id="depositedValueId" placeholder="R$..." required autofocus step="0.01">
             <input type="submit" value="Depositar">
             {% if messages %}
-                {% for message in messages %}
-                    <div class="alert green-alert">
-                        <p>
-                            {{ message }}
-                        </p>    
-                    </div>
-                {% endfor %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
             {% endif %}
         </form>
     </main>

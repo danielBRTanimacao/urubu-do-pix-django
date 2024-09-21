@@ -8,11 +8,16 @@ from decimal import Decimal
 def trading(request):
     if request.method == "POST":
         user = get_object_or_404(User, pk=request.user.id)
-        value_deposited= request.POST.get('depositedValue')
+        value_deposited = request.POST.get('depositedValue')
+        if Decimal(value_deposited) <= 0:
+            text: str = f"Valor depositado invalido tente um valor positivo! - R${value_deposited}"
+            messages.error(request, text)
+            return redirect('trading')
+
         user.amount += Decimal(value_deposited)
         user.save()
 
-        text: str = f"Valor depositado com sucesso! - {value_deposited}"
+        text: str = f"Valor depositado com sucesso! - R${value_deposited}"
         messages.success(request, text)
         return redirect('trading')
 
